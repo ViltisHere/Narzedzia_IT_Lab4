@@ -1,9 +1,9 @@
 #!/bin/bash
 menu_options() {
     echo "Wybierz parametr:"
-    echo "--date Pokazuje date."
-    echo "--logs Tworzy podana ilosc plikow."
-    echo "--help Wyswietli liste parametrow."
+    echo "--date/-d Pokazuje date."
+    echo "--logs/-l Tworzy podana ilosc plikow."
+    echo "--help/-h Wyswietli liste parametrow."
 }
 
 what_date() {
@@ -21,13 +21,13 @@ log_files() {
 }
 
 case "$1" in
-    --date)
+    --date|-d)
         what_date
         ;;
-    --logs)
+    --logs|-l)
         log_files ${2:-100}
         ;;
-    --help)
+    --help|-h)
         menu_options
         ;;
 esac
