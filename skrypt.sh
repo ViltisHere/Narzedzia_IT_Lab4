@@ -1,12 +1,15 @@
 #!/bin/bash
 menu_options() {
     echo "Wybierz parametr:"
-    echo "--date"
+    echo "--date Pokazuje date."
+    echo "--logs Tworzy podana ilosc plikow."
+    echo "--help Wyswietli liste parametrow."
 }
 
 what_date() {
     date
 }
+
 log_files() {
     local files=${1:-100}
     for i in $(seq 1 $files); do
@@ -23,5 +26,8 @@ case "$1" in
         ;;
     --logs)
         log_files ${2:-100}
+        ;;
+    --help)
+        menu_options
         ;;
 esac
