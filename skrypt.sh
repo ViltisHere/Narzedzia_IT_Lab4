@@ -53,4 +53,9 @@ case "$1" in
     --error|-e)
         error_files
         ;;
+    *)
+        echo"Błędna opcja"
+	menu_options
+	exit 1
+	;;
 esac
